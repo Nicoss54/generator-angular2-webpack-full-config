@@ -1,0 +1,28 @@
+{
+  "name": "generator-angular2-webpack-full-config",
+  "version": "1.0.0",
+  "author": "Nicolas FRIZZARIN",
+  "license": "ISC",
+  "description": "Generator Yoman starter angular2 project with webpack",
+  "files":[
+    "generators/app"
+  ],
+  "keywords":[
+    "yeoman-generator",
+    "angular2",
+    "starter",
+    "webpack"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "deep-extend": "^0.4.0",
+    "generator-node": "^1.7.0",
+    "inquirer-npm-name": "^1.0.0",
+    "lodash": "^3.6.0",
+    "mkdirp": "^0.5.1",
+    "superb": "^1.0.0",
+    "yeoman-generator": "^0.22.2",
+    "yosay": "^1.0.2"
+
+  }
+}
