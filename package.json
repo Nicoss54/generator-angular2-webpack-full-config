@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "author": "Nicolas FRIZZARIN",
   "license": "ISC",
-  "description": "Generator Yoman starter angular2 project with webpack",
+  "description": "Generator Yoeman starter angular2 project with webpack",
   "repository": "nicoss54/generator-angular2-webpack-full-config",
   "files":[
     "generators/app"
