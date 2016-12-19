@@ -1,6 +1,6 @@
 {
   "name": "starter-angular2-webpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A webpack starter for Angular",
   "scripts": {
     "start": "npm run serve:dev",
