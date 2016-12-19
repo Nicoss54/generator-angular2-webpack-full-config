@@ -10,6 +10,7 @@
     "prod": "node server.js"
   },
   "license": "MIT",
+  "repository": "nicoss54/generator-angular2-webpack-full-config",
   "dependencies": {
     "@angular/common": "~2.3.0",
     "@angular/compiler": "~2.3.0",
