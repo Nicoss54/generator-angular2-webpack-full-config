@@ -11,7 +11,8 @@
     "yeoman-generator",
     "angular2",
     "starter",
-    "webpack"
+    "webpack",
+    "bootstrap"
   ],
   "dependencies": {
     "chalk": "^1.0.0",

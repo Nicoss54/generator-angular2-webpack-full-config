@@ -32,24 +32,22 @@ module.exports = generators.Base.extend({
     },
     copyFiles: function () {
 
-        // files
-        this.copy("_package.json", this.appName + "/package.json");
-        this.copy("_server.js", this.appName + "/server.js");
-        this.copy("_superstatic.json", this.appName + "/superstatic.json");
-        this.copy("_tsconfig.json", this.appName + "/tsconfig.json");
-        this.copy("_common.js", this.appName + "/webpack/common.js");
-        this.copy("_dev.js", this.appName + "/webpack/dev.js");
-        this.copy("_prod.js", this.appName + "/webpack/prod.js");
-        this.copy("_index.html", this.appName + "/client/index.html");
-        this.copy("_polyfills.ts", this.appName+ "client/polyfills.ts");
-        this.copy("_vendor.ts", this.appName + "client/vendor.ts");
-        this.copy("_styles.css", this.appName + "client/styles.css");
-        this.copy("_main.ts", this.appName + "client/app/main.ts");
-        this.copy("_app.module.ts", this.appName + "client/app/app.module.ts");
-        this.copy("_app.routing.ts", this.appName + "client/app/app.routing.ts");
-        this.copy("_app.component.ts", this.appName + "client/app/components/app.component.ts");
-        this.copy("_app.component.html", this.appName + "client/app/components/app.component.html");
-
+        this.fs.copy(this.templatePath('_package.json'), this.destinationPath(this.appName + '/package.json'));
+        this.fs.copy(this.templatePath('_server.js'), this.destinationPath(this.appName + '/server.js'));
+        this.fs.copy(this.templatePath('_superstatic.json'), this.destinationPath(this.appName + '/superstatic.js'));
+        this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath(this.appName + '/tsconfig.json'));
+        this.fs.copy(this.templatePath('_common.js'), this.destinationPath(this.appName + '/webpack/common.js'));
+        this.fs.copy(this.templatePath('_dev.js'), this.destinationPath(this.appName + '/webpack/dev.js'));
+        this.fs.copy(this.templatePath('_prod.js'), this.destinationPath(this.appName + '/webpack/prod.js'));
+        this.fs.copy(this.templatePath('_index.html'), this.destinationPath(this.appName + '/client/index.html'));
+        this.fs.copy(this.templatePath('_polyfills.ts'), this.destinationPath(this.appName + '/client/polyfills.ts'));
+        this.fs.copy(this.templatePath('_vendor.ts'), this.destinationPath(this.appName + '/client/vendor.ts'));
+        this.fs.copy(this.templatePath('_styles.css'), this.destinationPath(this.appName + '/client/styles.css'));
+        this.fs.copy(this.templatePath('_main.ts'), this.destinationPath(this.appName + '/client/app/main.ts'));
+        this.fs.copy(this.templatePath('_app.module.ts'), this.destinationPath(this.appName + '/client/app/app.module.ts'));
+        this.fs.copy(this.templatePath('_app.routing.ts'), this.destinationPath(this.appName + '/client/app/app.routing.ts'));
+        this.fs.copy(this.templatePath('_app.component.ts'), this.destinationPath(this.appName + '/client/app/components/app.component.ts'));
+        this.fs.copy(this.templatePath('_app.component.html'), this.destinationPath(this.appName + '/client/app/components/app.component.html'));
     }
 
 });

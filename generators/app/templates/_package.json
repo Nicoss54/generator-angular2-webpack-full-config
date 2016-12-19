@@ -24,6 +24,7 @@
     "hapi": "^16.0.1",
     "inert": "^4.0.3",
     "jquery": "2.2.4",
+    "bootstrap": "^3.3.7",
     "path": "^0.12.7",
     "rxjs": "5.0.0-rc.4",
     "superstatic": "^4.0.3",
