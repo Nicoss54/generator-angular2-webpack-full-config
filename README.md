@@ -12,9 +12,11 @@ paste in a term this command line: **npm install -g yo**
 
 To install this generator, in a term paste this command line: **npm install -g generator-angular2-webpack-full-config**
 
-Then add this command line: **npm install**
+To begin a new projet, in a term paste this command line: **yo angular2-webpack-full-config** 
 
-This command line will install all dependencies modules which are necessary for the starter project
+Then, when you are in your projet root directory, paste this command line: **npm install**
+
+This command install all modules dependencies you need to begin your project.
 
 
 
