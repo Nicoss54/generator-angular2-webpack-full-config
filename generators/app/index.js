@@ -29,6 +29,7 @@ module.exports = generators.Base.extend({
         mkdir(this.appName + "/client");
         mkdir(this.appName + "/client/app");
         mkdir(this.appName + "/client/app/components");
+        mkdir(this.appName + "/client/app/components/welcome"); 
     },
     copyFiles: function () {
 
@@ -36,18 +37,22 @@ module.exports = generators.Base.extend({
         this.fs.copy(this.templatePath('_server.js'), this.destinationPath(this.appName + '/server.js'));
         this.fs.copy(this.templatePath('_superstatic.json'), this.destinationPath(this.appName + '/superstatic.js'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath(this.appName + '/tsconfig.json'));
-        this.fs.copy(this.templatePath('_common.js'), this.destinationPath(this.appName + '/webpack/common.js'));
-        this.fs.copy(this.templatePath('_dev.js'), this.destinationPath(this.appName + '/webpack/dev.js'));
-        this.fs.copy(this.templatePath('_prod.js'), this.destinationPath(this.appName + '/webpack/prod.js'));
+        this.fs.copy(this.templatePath('_common.js'), this.destinationPath(this.appName + '/config/common.js'));
+        this.fs.copy(this.templatePath('_dev.js'), this.destinationPath(this.appName + '/config/dev.js'));
+        this.fs.copy(this.templatePath('_prod.js'), this.destinationPath(this.appName + '/config/prod.js'));
         this.fs.copy(this.templatePath('_index.html'), this.destinationPath(this.appName + '/client/index.html'));
         this.fs.copy(this.templatePath('_polyfills.ts'), this.destinationPath(this.appName + '/client/polyfills.ts'));
         this.fs.copy(this.templatePath('_vendor.ts'), this.destinationPath(this.appName + '/client/vendor.ts'));
-        this.fs.copy(this.templatePath('_styles.css'), this.destinationPath(this.appName + '/client/styles.css'));
+        this.fs.copy(this.templatePath('_styles.scss'), this.destinationPath(this.appName + '/client/styles.scss'));
         this.fs.copy(this.templatePath('_main.ts'), this.destinationPath(this.appName + '/client/app/main.ts'));
         this.fs.copy(this.templatePath('_app.module.ts'), this.destinationPath(this.appName + '/client/app/app.module.ts'));
         this.fs.copy(this.templatePath('_app.routing.ts'), this.destinationPath(this.appName + '/client/app/app.routing.ts'));
         this.fs.copy(this.templatePath('_app.component.ts'), this.destinationPath(this.appName + '/client/app/components/app.component.ts'));
         this.fs.copy(this.templatePath('_app.component.html'), this.destinationPath(this.appName + '/client/app/components/app.component.html'));
+        this.fs.copy(this.templatePath('_welcome.component.ts'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.ts'));
+        this.fs.copy(this.templatePath('_welcome.component.html'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.html'));
+        this.fs.copy(this.templatePath('_welcome.component.scss'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.scss'));
+        
     }
 
 });

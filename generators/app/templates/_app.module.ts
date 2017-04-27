@@ -4,6 +4,7 @@ import { AppComponent } from './components/app.component';
 import { routing, appRoutingProviders } from './app.routing';
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
+import {WelcomeComponent} from "./components/welcome/welcome.component";
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import {HttpModule} from "@angular/http";
     ],
     declarations: [
         AppComponent,
+        WelcomeComponent
     ],
     bootstrap: [ AppComponent ]
 })

@@ -37,6 +37,10 @@ module.exports = {
                 loader: 'raw-loader'
             },
             {
+                test:/\.scss$/,
+                loaders:['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
                 test: /\.(png|woff|woff2|eot|ttf|svg|gif)(\?v=.*)?$/,
                 loader: "file-loader"
             },
