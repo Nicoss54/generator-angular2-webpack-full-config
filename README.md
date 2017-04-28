@@ -1,39 +1,52 @@
-######################### INTRODUCTION ######################### 
-Generator to create a project with angular 2 framework and webpack. This generator let you to have a config for development
-and for production. There is an auto reload process when you are in development mode.
+# Starter Angular with webpack config
+
+A yeoman generator, letting you to create easely an angular (version 4) web application with webpack (version 1) as module bundler
+
+[![node](https://img.shields.io/badge/node-v6.10.2-blue.svg)]()
+[![npm](https://img.shields.io/badge/npm-v4.5.0-blue.svg)]()
+[![angular](https://img.shields.io/badge/angular-v4-blue.svg)]()
+[![webpack](https://img.shields.io/badge/webpack-v1-blue.svg)]()
+[![build](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+[![dependencies](https://img.shields.io/badge/dependencies-good-green.svg)]()
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
+
+## Table of Contents
+
+* [Requirements](#Requirements)
+* [Installation](#Installation)
+* [Structure of Angular's Project](#Structure)
+* [Development Mode](#Development)
+* [Production Mode](#Production)
+* [Configuration style (css/scss)](#Configuration)
 
 
-######################### PRE REQUIS ######################### 
+## Requirements
 
-Before you used this generator, you must install node js (v >= 6.9.2), npm. After installing this, you need yo, to this, 
-paste in a term this command line: **npm install -g yo**
+Starter Angular requires the folowing to run:
+* Node.js: 6.9.0+
+* NPM: 3.2.3+ (normally comes wirh node js)
+* Yo: 1.5.1+
 
-######################### INSTALLATION ######################### 
+## Installation
 
-To install this generator, in a term paste this command line: **npm install -g generator-angular2-webpack-full-config**
+ To install Node js, go to their [Home Page](https://nodejs.org/en/) 
 
-To begin a new projet, in a term paste this command line: **yo angular2-webpack-full-config** 
+ To install Yo, paste this command line in your favorite term:
+ ```sh
+ npm install -g yo
+ ```
 
-Then, when you are in your projet root directory, paste this command line: **npm install**
+ To install this yoeman's generator, paste this command line:
+ ```sh
+ npm install -g generator-angular2-webpack-full-config
+ ```
 
-This command install all modules dependencies you need to begin your project.
+To launch this generator, and create your web-application, paste this command line
+```sh
+yo angular2-webpack-full-config
+```
 
-
-
-######################### DEVELOPMENT MODE #########################
-
-Launch dev server with auto reload: **npm start**
-
-######################### PRODUCTION MODE #########################
-
-Build distribution folder: **npm run build:prod**
-
-Test your application in production mode: **npm run serve:prod**
-
-
-
- 
- 
+## Structure of Agular's project
 
 
 
