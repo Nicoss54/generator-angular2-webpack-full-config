@@ -35,7 +35,7 @@ module.exports = generators.Base.extend({
 
         this.fs.copy(this.templatePath('_package.json'), this.destinationPath(this.appName + '/package.json'));
         this.fs.copy(this.templatePath('_server.js'), this.destinationPath(this.appName + '/server.js'));
-        this.fs.copy(this.templatePath('_superstatic.json'), this.destinationPath(this.appName + '/superstatic.js'));
+        this.fs.copy(this.templatePath('_superstatic.json'), this.destinationPath(this.appName + '/superstatic.json'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath(this.appName + '/tsconfig.json'));
         this.fs.copy(this.templatePath('_common.js'), this.destinationPath(this.appName + '/config/common.js'));
         this.fs.copy(this.templatePath('_dev.js'), this.destinationPath(this.appName + '/config/dev.js'));
