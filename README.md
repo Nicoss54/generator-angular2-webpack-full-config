@@ -26,7 +26,7 @@ A yeoman generator, letting you to create easely an angular (version 4) web appl
 
 Starter Angular requires the folowing to run:
 * Node.js: **4.x.x+**
-* NPM: **3.x.x+** (normally comes wirh node js)
+* NPM: **3.x.x+** (normally comes with node js)
 * Yo: **1.x.x+**
 
 ## Installation
@@ -57,7 +57,7 @@ npm install
 
 This starter project respects Angular's best practices. To organize your project with those best practices, refer to [Angular Home Page](https://angular.io/)
 
-## Developement Mode
+## Development Mode
 
 The development mode is realized by webpack-dev-server (version 1). To launch this server, go to your app folder and paste this command line
 ```sh
@@ -96,7 +96,7 @@ import '!style-loader!css-loader!sass-loader!path to your sass file'
 In an angular component it's necessary to stringify your sass file,
 here is the syntax
 ```ts
-styles:[require('path to sass file'.toString())]
+styles:[require('path to sass file').toString()]
 ```
 
 To import a css file in a typescript file, here is an exemple: 
