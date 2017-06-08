@@ -1,6 +1,6 @@
 {
   "name": "angular2-webpack",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A webpack starter for Angular",
   "scripts": {
     "start": "npm run serve:dev",
@@ -28,7 +28,7 @@
     "path": "0.12.7",
     "rxjs": "^5.0.1",
     "superstatic": "4.0.3",
-    "zone.js": "0.8.5"
+    "zone.js": "^0.8.5"
   },
   "devDependencies": {
     "@types/node": "6.0.45",
@@ -48,7 +48,7 @@
     "source-map-loader": "0.1.5",
     "rimraf": "2.5.2",
     "style-loader": "0.13.1",
-    "typescript": "2.2.2",
+    "typescript": "^2.2.2",
     "compression-webpack-plugin": "0.3.1",
     "webpack": "1.13.0",
     "webpack-dev-server": "1.14.1",
