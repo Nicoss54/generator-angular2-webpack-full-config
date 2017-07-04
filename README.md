@@ -1,11 +1,11 @@
 # Starter Angular with webpack config
 
-A yeoman generator, letting you to create easely an angular (version 4) web application with webpack (version 1) as module bundler
+A yeoman generator, letting you to create easely an angular (version 4) web application with webpack (version 2) as module bundler
 
 [![node](https://img.shields.io/badge/node-v6.10.2-blue.svg)]()
-[![npm](https://img.shields.io/badge/npm-v4.5.0-blue.svg)]()
+[![npm](https://img.shields.io/badge/npm-5.0.4-blue.svg)]()
 [![angular](https://img.shields.io/badge/angular-v4-blue.svg)]()
-[![webpack](https://img.shields.io/badge/webpack-v1-blue.svg)]()
+[![webpack](https://img.shields.io/badge/webpack-v2-blue.svg)]()
 [![build](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![dependencies](https://img.shields.io/badge/dependencies-good-green.svg)]()
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -103,6 +103,12 @@ To import a css file in a typescript file, here is an exemple:
 ```ts
 import '!style-loader!css-loader!path to your css file '
 ```
+
+You can also include your sass file in the main sass file like this:
+```scss
+@import 'path to your sass file'
+````
+
 In an Angular component, just require your css file like this
 ```ts
 styles:[require('path to your css file')]
@@ -110,7 +116,7 @@ styles:[require('path to your css file')]
 
 ## Dependencies
 
-if your projet needs more dependencies you must import them in the vendor file.
+If your projet needs more dependencies you must import them in the vendor file.
 Some exemples are already present in this file.
 
 ## License

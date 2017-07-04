@@ -1,29 +1,15 @@
 const WebpackMerge = require('webpack-merge'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
     CommonConfig = require('./common.js'),
-    DefinePlugin = require('webpack/lib/DefinePlugin');
+    DefinePlugin = require('webpack/lib/DefinePlugin'),
+    LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
 module.exports = WebpackMerge(CommonConfig, {
 
-    debug: true,
-    devtool: 'source-map',
-
     output: {
-        path: './dist',
+        path: __dirname + './dist',
+        publicPath: '/',
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js',
-    },
-
-    htmlLoader: {
-        minimize: true,
-        removeAttributeQuotes: false,
-        caseSensitive: true,
-        customAttrSurround: [
-            [/#/, /(?:)/],
-            [/\*/, /(?:)/],
-            [/\[?\(?/, /(?:)/]
-        ],
-        customAttrAssign: [/\)?\]?=/]
     },
 
     devServer: {
@@ -33,14 +19,28 @@ module.exports = WebpackMerge(CommonConfig, {
         watchOptions: {
             aggregateTimeout: 300,
             poll: 1000
-        },
-        outputPath: './dist'
+        }
     },
 
     plugins: [
+
+        new LoaderOptionsPlugin({
+            debug: true,
+            devtool: 'source-map',
+            htmlLoader: {
+                minimize: true,
+                removeAttributeQuotes: false,
+                caseSensitive: true,
+                customAttrSurround: [
+                    [/#/, /(?:)/],
+                    [/\*/, /(?:)/],
+                    [/\[?\(?/, /(?:)/]
+                ],
+                customAttrAssign: [/\)?\]?=/]
+            }
+        }),
         new DefinePlugin({
             "process.env.ENV": JSON.stringify('dev')
         })
     ]
-
 });

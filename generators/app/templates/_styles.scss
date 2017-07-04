@@ -1,6 +1,14 @@
-#message {
+/**
+    Here to Import scss file for code more proper
+ */
 
-    h1{
-        text-align: center;
-    }
-}
+@import 'app/components/welcome/welcome.component';
+
+/**
+   Here your definition of your scss variable
+ */
+
+
+/**
+    Here your global application Style
+ */

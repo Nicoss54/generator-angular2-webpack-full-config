@@ -5,7 +5,7 @@ const util = require('util'),
     mkdir = require('mkdirp');
 
 module.exports = generators.Base.extend({
-    promptUserDialog: function () {
+    promptUserDialog: function() {
         var done = this.async();
 
         this.log(yosay(
@@ -17,23 +17,24 @@ module.exports = generators.Base.extend({
             message: 'What is your app\'s name ?'
         }];
 
-        this.prompt(prompts, function (props) {
+        this.prompt(prompts, function(props) {
             this.appName = props.appName;
             mkdir(this.appName);
             done();
         }.bind(this));
     },
-    createFolders: function () {
+    createFolders: function() {
 
         // FOLDERS
         mkdir(this.appName + "/client");
         mkdir(this.appName + "/client/app");
         mkdir(this.appName + "/client/app/components");
-        mkdir(this.appName + "/client/app/components/welcome"); 
+        mkdir(this.appName + "/client/app/components/welcome");
     },
-    copyFiles: function () {
+    copyFiles: function() {
 
         this.fs.copy(this.templatePath('_package.json'), this.destinationPath(this.appName + '/package.json'));
+        this.fs.copy(this.templatePath('_tslint.json'), this.destinationPath(this.appName + '/tslint.json'));
         this.fs.copy(this.templatePath('_server.js'), this.destinationPath(this.appName + '/server.js'));
         this.fs.copy(this.templatePath('_superstatic.json'), this.destinationPath(this.appName + '/superstatic.json'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath(this.appName + '/tsconfig.json'));
@@ -52,7 +53,7 @@ module.exports = generators.Base.extend({
         this.fs.copy(this.templatePath('_welcome.component.ts'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.ts'));
         this.fs.copy(this.templatePath('_welcome.component.html'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.html'));
         this.fs.copy(this.templatePath('_welcome.component.scss'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.scss'));
-        
+
     }
 
 });

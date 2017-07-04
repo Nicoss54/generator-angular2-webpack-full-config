@@ -1,12 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
     selector: 'welcome',
-    template:require('./welcome.component.html'),
-    styles:[require('./welcome.component.scss').toString()],
+    template: require('./welcome.component.html'),
 })
-export class WelcomeComponent {
+
+export class WelcomeComponent implements OnInit {
     constructor() {}
+
+    ngOnInit() {
+        console.log('hello world');
+    }
 
 }

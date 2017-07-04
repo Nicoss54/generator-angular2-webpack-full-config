@@ -1,6 +1,8 @@
 const Webpack = require('webpack'),
     CopyWebpackPlugin = require('copy-webpack-plugin'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin'),
+    path = require('path');
 
 module.exports = {
 
@@ -11,42 +13,43 @@ module.exports = {
     },
 
     resolve: {
-
-        extensions: ['', '.ts', '.js'],
-        root: './',
-        modulesDirectories: ['./node_modules'],
-
+        extensions: ['.ts', '.js'],
+        //root: './',
+        modules: [
+            path.join(__dirname, './'),
+            './node_modules'
+        ],
     },
 
     module: {
 
-        preLoaders: [
+        rules: [
+
             {
                 test: /\.js$/,
-                loader: 'source-map-loader',
-            }
-        ],
-
-        loaders: [
+                enforce: 'pre',
+                use: 'source-map-loader',
+            },
             {
                 test: /\.ts$/,
-                loader: 'awesome-typescript-loader',
+                enforce: 'pre',
+                use: 'tslint-loader'
+            },
+            {
+                test: /\.ts$/,
+                use: 'awesome-typescript-loader',
             },
             {
                 test: /\.css$/,
-                loader: 'raw-loader'
+                use: 'raw-loader'
             },
             {
-                test:/\.scss$/,
-                loaders:['style-loader', 'css-loader', 'sass-loader']
+                test: /\.scss$/,
+                use: 'sass-loader'
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg|gif)(\?v=.*)?$/,
-                loader: "file-loader"
-            },
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
+                use: "file-loader"
             },
             {
                 test: /\.html$/,
@@ -61,8 +64,14 @@ module.exports = {
     plugins: [
 
 
+        new ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)@angular/,
+            __dirname + './client', {}
+        ),
+
+
         new Webpack.optimize.CommonsChunkPlugin({
-            name: ["vendor","polyfills"]
+            name: ["vendor", "polyfills"]
         }),
 
         new CopyWebpackPlugin([
