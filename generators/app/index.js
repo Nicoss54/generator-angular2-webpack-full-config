@@ -30,6 +30,8 @@ module.exports = generators.Base.extend({
         mkdir(this.appName + "/client/app");
         mkdir(this.appName + "/client/app/components");
         mkdir(this.appName + "/client/app/components/welcome");
+        mkdir(this.appName + "/scripts");
+        mkdir(this.appName + "/docker");
     },
     copyFiles: function() {
 
@@ -53,7 +55,10 @@ module.exports = generators.Base.extend({
         this.fs.copy(this.templatePath('_welcome.component.ts'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.ts'));
         this.fs.copy(this.templatePath('_welcome.component.html'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.html'));
         this.fs.copy(this.templatePath('_welcome.component.scss'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.scss'));
-
+        this.fs.copy(this.templatePath('_.dockerignore'), this.destinationPath(this.appName + '/.dockerignore'));
+        this.fs.copy(this.templatePath('_Dockerfile'), this.destinationPath(this.appName + '/docker/Dockerfile'));
+        this.fs.copy(this.templatePath('_build-image-docker.sh'), this.destinationPath(this.appName + '/scripts/build-image-docker.sh'));
+        this.fs.copy(this.templatePath('_launch-container.sh'), this.destinationPath(this.appName + '/scripts/launch-container.sh'));
     }
 
 });

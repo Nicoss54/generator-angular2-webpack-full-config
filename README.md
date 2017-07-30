@@ -19,6 +19,8 @@ A yeoman generator, letting you to create easely an angular (version 4) web appl
 * [Production Mode](#Production)
 * [Configuration style (css/scss)](#Configuration)
 * [Add dependencies to my project](#Dependencies)
+* [Docker](#Docker)
+* [Documentation](#Documentation)
 * [License](#License)
 
 
@@ -98,16 +100,14 @@ here is the syntax
 ```ts
 styles:[require('path to sass file').toString()]
 ```
-
+You can also include your sass file in the main sass file like this:
+```scss
+@import 'path to your sass file'
+```
 To import a css file in a typescript file, here is an exemple: 
 ```ts
 import '!style-loader!css-loader!path to your css file '
 ```
-
-You can also include your sass file in the main sass file like this:
-```scss
-@import 'path to your sass file'
-````
 
 In an Angular component, just require your css file like this
 ```ts
@@ -118,6 +118,29 @@ styles:[require('path to your css file')]
 
 If your projet needs more dependencies you must import them in the vendor file.
 Some exemples are already present in this file.
+
+## Docker
+
+Now your application can be deploy in a Docker container. All scripts are already done.
+These scripts are in the script folder. You just must change 'name_of_your_image:tag' by your really app name image and the the version of your tag.
+
+To lauch a script, go to the script folder, and in a terminal
+```sh
+sh name_of_your_script_file
+```
+## Documentation
+
+Create documentation for your application is very easy now with compoDoc.
+To create doc, in a terminal, paste this command line
+```sh
+npm run compodoc
+```
+This command line will create a documentation folder called 'documentation'.
+To see the documentation, you must serve it on a server. For this, paste this command line
+```
+sh npm run servedoc
+```
+For more option, you can go the the official webpage of [compoDoc](https://compodoc.github.io/website/guides/getting-started.html)
 
 ## License
 

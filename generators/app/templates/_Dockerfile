@@ -1,0 +1,14 @@
+# create image with the lts version of node
+FROM node:6.11.0
+# expose your app port
+EXPOSE 3000
+# create directory where you app will be placed
+RUN mkdir app
+# change directory and go to the directory "app"
+WORKDIR /app
+# add source app in your new directory
+ADD . /app
+# install your dependencies of your project
+RUN npm install && npm run build:prod
+# serve your application
+CMD ["npm", "run", "serve:prod"]

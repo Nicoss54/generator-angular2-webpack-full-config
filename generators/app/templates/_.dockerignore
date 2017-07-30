@@ -1,0 +1,8 @@
+.git
+node_modules
+*.iml
+.idea
+.DS_STORE
+.gitignore
+README.md
+dist
