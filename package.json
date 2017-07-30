@@ -1,6 +1,6 @@
 {
     "name": "generator-angular2-webpack-full-config",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "author": "Nicolas FRIZZARIN",
     "license": "ISC",
     "description": "Generator Yoeman starter angular2 project with webpack",
