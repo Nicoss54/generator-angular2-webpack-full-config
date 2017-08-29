@@ -3,12 +3,13 @@ const WebpackMerge = require('webpack-merge'),
     DefinePlugin = require('webpack/lib/DefinePlugin'),
     WebpackMd5Hash = require('webpack-md5-hash'),
     CompressionPlugin = require('compression-webpack-plugin'),
+    Path = require('path'),
     LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
 module.exports = WebpackMerge(CommonConfig, {
 
     output: {
-        path: './dist',
+        path: Path.join(__dirname, '../dist'),
         filename: '[name].[chunkhash].bundle.js',
         sourceMapFilename: '[name].[chunkhash].bundle.map',
         chunkFilename: '[id].[chunkhash].chunk.js',
