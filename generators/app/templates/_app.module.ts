@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { AppComponent } from './components/app.component';
-import { routing, appRoutingProviders } from './app.routing';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import {WelcomeComponent} from './components/welcome/welcome.component';
+import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { CoreModule } from './core/core.module';
+import { HelloWorldModule } from './hello-world/hello-world.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule,
-        HttpModule,
-        routing,
-        appRoutingProviders
+        CoreModule,
+        HelloWorldModule,
+        AppRoutingModule
     ],
-    declarations: [
-        AppComponent,
-        WelcomeComponent
-    ],
+    declarations: [ AppComponent ],
     bootstrap: [ AppComponent ]
 })
 

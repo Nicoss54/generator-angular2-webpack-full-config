@@ -3,8 +3,8 @@ const WebpackMerge = require('webpack-merge'),
     DefinePlugin = require('webpack/lib/DefinePlugin'),
     WebpackMd5Hash = require('webpack-md5-hash'),
     CompressionPlugin = require('compression-webpack-plugin'),
-    Path = require('path'),
-    LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
+    Path = require ('path');
+LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
 module.exports = WebpackMerge(CommonConfig, {
 

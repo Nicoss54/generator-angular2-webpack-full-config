@@ -1,13 +1,13 @@
 const WebpackMerge = require('webpack-merge'),
     CommonConfig = require('./common.js'),
     DefinePlugin = require('webpack/lib/DefinePlugin'),
-    LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin'),
     Path = require('path');
+LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
 module.exports = WebpackMerge(CommonConfig, {
 
     output: {
-        path: Path.join(__dirname,'../dist'),
+        path: Path.join(__dirname, '../dist'),
         publicPath: '/',
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js',
@@ -15,7 +15,7 @@ module.exports = WebpackMerge(CommonConfig, {
 
     devServer: {
         port: 8000,
-        host: 'localhost',
+        host: '0.0.0.0',
         historyApiFallback: true,
         watchOptions: {
             aggregateTimeout: 300,

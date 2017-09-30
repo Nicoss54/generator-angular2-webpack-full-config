@@ -1,6 +1,6 @@
 # Starter Angular with webpack config
 
-A yeoman generator, letting you to create easely an angular (version 4) web application with webpack (version 2) as module bundler
+A yeoman generator, letting you to create easely an angular (version 4) web application with webpack (version 3) as module bundler
 
 [![node](https://img.shields.io/badge/node-v6.10.2-blue.svg)]()
 [![npm](https://img.shields.io/badge/npm-5.0.4-blue.svg)]()

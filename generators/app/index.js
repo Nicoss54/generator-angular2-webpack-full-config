@@ -28,8 +28,11 @@ module.exports = generators.Base.extend({
         // FOLDERS
         mkdir(this.appName + "/client");
         mkdir(this.appName + "/client/app");
-        mkdir(this.appName + "/client/app/components");
-        mkdir(this.appName + "/client/app/components/welcome");
+        mkdir(this.appName + "/client/app/core");
+        mkdir(this.appName + "/client/app/shared");
+        mkdir(this.appName + "/client/app/hello-world");
+        mkdir(this.appName + "/client/app/hello-world/welcome");
+        mkdir(this.appName + "/config");
         mkdir(this.appName + "/scripts");
         mkdir(this.appName + "/docker");
     },
@@ -49,12 +52,15 @@ module.exports = generators.Base.extend({
         this.fs.copy(this.templatePath('_styles.scss'), this.destinationPath(this.appName + '/client/styles.scss'));
         this.fs.copy(this.templatePath('_main.ts'), this.destinationPath(this.appName + '/client/app/main.ts'));
         this.fs.copy(this.templatePath('_app.module.ts'), this.destinationPath(this.appName + '/client/app/app.module.ts'));
-        this.fs.copy(this.templatePath('_app.routing.ts'), this.destinationPath(this.appName + '/client/app/app.routing.ts'));
-        this.fs.copy(this.templatePath('_app.component.ts'), this.destinationPath(this.appName + '/client/app/components/app.component.ts'));
-        this.fs.copy(this.templatePath('_app.component.html'), this.destinationPath(this.appName + '/client/app/components/app.component.html'));
-        this.fs.copy(this.templatePath('_welcome.component.ts'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.ts'));
-        this.fs.copy(this.templatePath('_welcome.component.html'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.html'));
-        this.fs.copy(this.templatePath('_welcome.component.scss'), this.destinationPath(this.appName + '/client/app/components/welcome/welcome.component.scss'));
+        this.fs.copy(this.templatePath('_app-routing.module.ts'), this.destinationPath(this.appName + '/client/app/app-routing.module.ts'));
+        this.fs.copy(this.templatePath('_shared.module.ts'), this.destinationPath(this.appName + '/client/app/shared/shared.module.ts'));
+        this.fs.copy(this.templatePath('_core.module.ts'), this.destinationPath(this.appName + '/client/app/core/core.module.ts'));
+        this.fs.copy(this.templatePath('_hello-world.module.ts'), this.destinationPath(this.appName + '/client/app/hello-world/hello-world.module.ts'));
+        this.fs.copy(this.templatePath('_app.component.ts'), this.destinationPath(this.appName + '/client/app/app.component.ts'));
+        this.fs.copy(this.templatePath('_app.component.html'), this.destinationPath(this.appName + '/client/app/app.component.html'));
+        this.fs.copy(this.templatePath('_welcome.component.ts'), this.destinationPath(this.appName + '/client/app/hello-world/welcome/welcome.component.ts'));
+        this.fs.copy(this.templatePath('_welcome.component.html'), this.destinationPath(this.appName + '/client/app/hello-world/welcome/welcome.component.html'));
+        this.fs.copy(this.templatePath('_welcome.component.scss'), this.destinationPath(this.appName + '/client/app/hello-world/welcome/welcome.component.scss'));
         this.fs.copy(this.templatePath('_.dockerignore'), this.destinationPath(this.appName + '/.dockerignore'));
         this.fs.copy(this.templatePath('_Dockerfile'), this.destinationPath(this.appName + '/docker/Dockerfile'));
         this.fs.copy(this.templatePath('_build-image-docker.sh'), this.destinationPath(this.appName + '/scripts/build-image-docker.sh'));
