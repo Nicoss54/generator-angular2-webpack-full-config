@@ -75,7 +75,7 @@ module.exports = {
 
 
         new ContextReplacementPlugin(
-            /angular(\\|\/)core(\\|\/)@angular/,
+            /(.+)?angular(\\|\/)core(.+)?/,
             __dirname + './client', {}
         ),
 
